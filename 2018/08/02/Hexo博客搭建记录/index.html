@@ -112,7 +112,7 @@
 <meta property="og:description" content="博客，也就自己看的赏心悦目  现在人人都可以动手自己搭建一个博客的时代,Hexo+github page的方式极大的方便了过把博客瘾的快感，这个教程更多的是记录自己博客的搭建方式和设置，纯粹是自己的一个记录，以便下次提起裤子就可以跑！">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://pctoj8cop.bkt.clouddn.com/centerquote.jpg">
-<meta property="og:updated_time" content="2018-08-02T14:50:05.380Z">
+<meta property="og:updated_time" content="2018-08-02T14:56:40.168Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客搭建记录">
 <meta name="twitter:description" content="博客，也就自己看的赏心悦目  现在人人都可以动手自己搭建一个博客的时代,Hexo+github page的方式极大的方便了过把博客瘾的快感，这个教程更多的是记录自己博客的搭建方式和设置，纯粹是自己的一个记录，以便下次提起裤子就可以跑！">
@@ -402,7 +402,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  737
+                  727
                 </span>
               
 
@@ -435,21 +435,21 @@
 <li>注册Github，并建立一个库为：<code>username.github.io</code> [username]为你gtihub的名字</li>
 <li>下载安装<a href="https://git-scm.com/" target="_blank" rel="noopener">git</a></li>
 <li>下载安装<a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a></li>
-<li>有个域名（非必需）<h1 id="Hexo-Github-page博客的搭建"><a href="#Hexo-Github-page博客的搭建" class="headerlink" title="Hexo + Github page博客的搭建"></a>Hexo + Github page博客的搭建</h1><h2 id="2-1-本地的搭建"><a href="#2-1-本地的搭建" class="headerlink" title="2.1. 本地的搭建"></a>2.1. 本地的搭建</h2></li>
+<li>有个域名（非必需）<h1 id="Hexo-Github-page博客的搭建"><a href="#Hexo-Github-page博客的搭建" class="headerlink" title="Hexo + Github page博客的搭建"></a>Hexo + Github page博客的搭建</h1><h2 id="本地的搭建"><a href="#本地的搭建" class="headerlink" title="本地的搭建"></a>本地的搭建</h2></li>
 </ul>
 <ul>
 <li>新建文件夹，例如Blog(下面都以此为例)，进入Blog右击运行<code>Git Bash Here</code></li>
 <li>输入命令<code>npm install -g hexo</code></li>
 <li>再运行 <code>hexo init</code>下载模板</li>
 <li>运行<code>npm install</code></li>
-<li>最后启动本地服务器 <code>hexo g</code>和<code>hexo s</code>(本地打开localhost:4000即可看见博客的成功搭建了)<h2 id="2-2-与Github-page关联"><a href="#2-2-与Github-page关联" class="headerlink" title="2.2. 与Github page关联"></a>2.2. 与Github page关联</h2></li>
+<li>最后启动本地服务器 <code>hexo g</code>和<code>hexo s</code>(本地打开localhost:4000即可看见博客的成功搭建了)<h2 id="与Github-page关联"><a href="#与Github-page关联" class="headerlink" title="与Github page关联"></a>与Github page关联</h2></li>
 <li><p>打开Blog根目录下的_config.yml配置文件，找到<code>deploy</code>修改成如下;</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/username/username.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>运行：npm install hexo-deployer-git –save</p>
 </li>
 <li>运行：hexo g（本地生成静态文件）</li>
-<li>运行：hexo d（将本地静态文件推送至Github）<br>此时访问：username.github.io 即为你的博客地址了。<h1 id="3-绑定域名"><a href="#3-绑定域名" class="headerlink" title="3.绑定域名"></a>3.绑定域名</h1></li>
+<li>运行：hexo d（将本地静态文件推送至Github）<br>此时访问：username.github.io 即为你的博客地址了。<h1 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h1></li>
 </ul>
 <ul>
 <li>在<code>https://github.com/username/username.github.io</code>仓库下新建一个文件<code>CNAME</code>,并填入域名，如<blockquote>
@@ -462,17 +462,17 @@
 <li><p>最后等待一段时间，即可享受自己的域名博客了</p>
 </li>
 </ul>
-<h1 id="4-更新博客内容"><a href="#4-更新博客内容" class="headerlink" title="4.更新博客内容"></a>4.更新博客内容</h1><ul>
+<h1 id="更新博客内容"><a href="#更新博客内容" class="headerlink" title="更新博客内容"></a>更新博客内容</h1><ul>
 <li>直接在git中<code>hexo new &quot;XX&quot;</code>,即可打开<code>Blog\source\_posts</code>目录下建立的xx.md文件，进行码字了</li>
 <li>完成后执行<code>hexo g</code>和<code>hexo s</code>在本地预览</li>
-<li>本地检查无问题后即可执行<code>hexo d</code>同步到自己的博客上了<h1 id="5-写作小技巧"><a href="#5-写作小技巧" class="headerlink" title="5.写作小技巧"></a>5.写作小技巧</h1><h2 id="5-1文章的创建"><a href="#5-1文章的创建" class="headerlink" title="5.1文章的创建"></a>5.1文章的创建</h2></li>
+<li>本地检查无问题后即可执行<code>hexo d</code>同步到自己的博客上了<h1 id="写作小技巧"><a href="#写作小技巧" class="headerlink" title="写作小技巧"></a>写作小技巧</h1><h2 id="文章的创建"><a href="#文章的创建" class="headerlink" title="文章的创建"></a>文章的创建</h2></li>
 <li>若是有vscode写markdown的话，可以做个创建文件后，直接在vscode中打开的脚本(直接参考<a href="https://leaferx.online/2018/03/17/hexo-auto-open-vscode/" target="_blank" rel="noopener">LEAFERx</a>的博客)<blockquote>
 <p>在 博客根目录/scripts/ 下新建 AutoOpenEditor.js 文件（取其他名字也可以，不影响）（如果没有 scripts 目录则新建），并粘贴以下代码，保存。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> spawn = <span class="built_in">require</span>(<span class="string">'hexo-util/lib/spawn'</span>);</span><br><span class="line"></span><br><span class="line">hexo.on(<span class="string">'new'</span>, (data) =&gt; &#123;</span><br><span class="line">  spawn(<span class="string">'code'</span>, [hexo.base_dir, data.path]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </blockquote>
 </li>
 </ul>
-<h2 id="5-2-文章模板的修改"><a href="#5-2-文章模板的修改" class="headerlink" title="5.2 文章模板的修改"></a>5.2 文章模板的修改</h2><ul>
+<h2 id="文章模板的修改"><a href="#文章模板的修改" class="headerlink" title="文章模板的修改"></a>文章模板的修改</h2><ul>
 <li><p>通过修改<code>\Blog\scaffolds\post.md</code>文件，编写固定类型（参考）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title 文章的标题</span><br><span class="line">date 创建日期 （文件的创建日期 ）</span><br><span class="line">updated 修改日期 （ 文件的修改日期）</span><br><span class="line">comments 是否开启评论 true</span><br><span class="line">tags 标签</span><br><span class="line">categories 分类</span><br><span class="line">permalink url中的名字（文件名）</span><br></pre></td></tr></table></figure>
 </li>
@@ -688,7 +688,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-Github-page博客的搭建"><span class="nav-number">2.</span> <span class="nav-text">Hexo + Github page博客的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-本地的搭建"><span class="nav-number">2.1.</span> <span class="nav-text">2.1. 本地的搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-与Github-page关联"><span class="nav-number">2.2.</span> <span class="nav-text">2.2. 与Github page关联</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-绑定域名"><span class="nav-number">3.</span> <span class="nav-text">3.绑定域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-更新博客内容"><span class="nav-number">4.</span> <span class="nav-text">4.更新博客内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-写作小技巧"><span class="nav-number">5.</span> <span class="nav-text">5.写作小技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-1文章的创建"><span class="nav-number">5.1.</span> <span class="nav-text">5.1文章的创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-2-文章模板的修改"><span class="nav-number">5.2.</span> <span class="nav-text">5.2 文章模板的修改</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客-NexT主题美化"><span class="nav-number">6.</span> <span class="nav-text">Hexo博客 NexT主题美化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-Github-page博客的搭建"><span class="nav-number">2.</span> <span class="nav-text">Hexo + Github page博客的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#本地的搭建"><span class="nav-number">2.1.</span> <span class="nav-text">本地的搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与Github-page关联"><span class="nav-number">2.2.</span> <span class="nav-text">与Github page关联</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绑定域名"><span class="nav-number">3.</span> <span class="nav-text">绑定域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更新博客内容"><span class="nav-number">4.</span> <span class="nav-text">更新博客内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写作小技巧"><span class="nav-number">5.</span> <span class="nav-text">写作小技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章的创建"><span class="nav-number">5.1.</span> <span class="nav-text">文章的创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章模板的修改"><span class="nav-number">5.2.</span> <span class="nav-text">文章模板的修改</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客-NexT主题美化"><span class="nav-number">6.</span> <span class="nav-text">Hexo博客 NexT主题美化</span></a></li></ol></div>
             
 
           </div>
