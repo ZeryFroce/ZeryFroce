@@ -1,72 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search> 
-  
-    
-    <entry>
-      <title>Hexo博客搭建记录</title>
-      <link href="/2018/08/02/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/"/>
-      <url>/2018/08/02/Hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95/</url>
-      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>博客，也就自己看的赏心悦目</p></blockquote><p>现在人人都可以动手自己搭建一个博客的时代,Hexo+github page的方式极大的方便了过把博客瘾的快感，这个教程更多的是记录自己博客的搭建方式和设置，纯粹是自己的一个记录，以便下次提起裤子就可以跑！</p><a id="more"></a><h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><ul><li>注册Github，并建立一个库为：<code>username.github.io</code> [username]为你gtihub的名字</li><li>下载安装<a href="https://git-scm.com/" target="_blank" rel="noopener">git</a></li><li>下载安装<a href="https://nodejs.org/en/" target="_blank" rel="noopener">node.js</a></li><li>有个域名（非必需）<h1 id="Hexo-Github-page博客的搭建"><a href="#Hexo-Github-page博客的搭建" class="headerlink" title="Hexo + Github page博客的搭建"></a>Hexo + Github page博客的搭建</h1><h2 id="本地的搭建"><a href="#本地的搭建" class="headerlink" title="本地的搭建"></a>本地的搭建</h2></li></ul><ul><li>新建文件夹，例如Blog(下面都以此为例)，进入Blog右击运行<code>Git Bash Here</code></li><li>输入命令<code>npm install -g hexo</code></li><li>再运行 <code>hexo init</code>下载模板</li><li>运行<code>npm install</code></li><li>最后启动本地服务器 <code>hexo g</code>和<code>hexo s</code>(本地打开localhost:4000即可看见博客的成功搭建了)<h2 id="与Github-page关联"><a href="#与Github-page关联" class="headerlink" title="与Github page关联"></a>与Github page关联</h2></li><li><p>打开Blog根目录下的_config.yml配置文件，找到<code>deploy</code>修改成如下;</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https://github.com/username/username.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></li><li><p>运行：npm install hexo-deployer-git –save</p></li><li>运行：hexo g（本地生成静态文件）</li><li>运行：hexo d（将本地静态文件推送至Github）<br>此时访问：username.github.io 即为你的博客地址了。<h1 id="绑定域名"><a href="#绑定域名" class="headerlink" title="绑定域名"></a>绑定域名</h1></li></ul><ul><li>在<code>https://github.com/username/username.github.io</code>仓库下新建一个文件<code>CNAME</code>,并填入域名，如<blockquote><p>examle.com</p></blockquote></li><li><p>到域名提供商处设置域名解析，添加以下纪录</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@          A             185.199.108.153</span><br><span class="line">@          A             185.199.109.153    </span><br><span class="line">www      CNAME           username.github.io.</span><br></pre></td></tr></table></figure></li><li><p>最后等待一段时间，即可享受自己的域名博客了</p></li></ul><h1 id="更新博客内容"><a href="#更新博客内容" class="headerlink" title="更新博客内容"></a>更新博客内容</h1><ul><li>直接在git中<code>hexo new &quot;XX&quot;</code>,即可打开<code>Blog\source\_posts</code>目录下建立的xx.md文件，进行码字了</li><li>完成后执行<code>hexo g</code>和<code>hexo s</code>在本地预览</li><li>本地检查无问题后即可执行<code>hexo d</code>同步到自己的博客上了<h1 id="写作小技巧"><a href="#写作小技巧" class="headerlink" title="写作小技巧"></a>写作小技巧</h1><h2 id="文章的创建"><a href="#文章的创建" class="headerlink" title="文章的创建"></a>文章的创建</h2></li><li>若是有vscode写markdown的话，可以做个创建文件后，直接在vscode中打开的脚本(直接参考<a href="https://leaferx.online/2018/03/17/hexo-auto-open-vscode/" target="_blank" rel="noopener">LEAFERx</a>的博客)<blockquote><p>在 博客根目录/scripts/ 下新建 AutoOpenEditor.js 文件（取其他名字也可以，不影响）（如果没有 scripts 目录则新建），并粘贴以下代码，保存。</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> spawn = <span class="built_in">require</span>(<span class="string">'hexo-util/lib/spawn'</span>);</span><br><span class="line"></span><br><span class="line">hexo.on(<span class="string">'new'</span>, (data) =&gt; &#123;</span><br><span class="line">  spawn(<span class="string">'code'</span>, [hexo.base_dir, data.path]);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></blockquote></li></ul><h2 id="文章模板的修改"><a href="#文章模板的修改" class="headerlink" title="文章模板的修改"></a>文章模板的修改</h2><ul><li><p>通过修改<code>\Blog\scaffolds\post.md</code>文件，编写固定类型（参考）</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">title 文章的标题</span><br><span class="line">date 创建日期 （文件的创建日期 ）</span><br><span class="line">updated 修改日期 （ 文件的修改日期）</span><br><span class="line">comments 是否开启评论 true</span><br><span class="line">tags 标签</span><br><span class="line">categories 分类</span><br><span class="line">permalink url中的名字（文件名）</span><br></pre></td></tr></table></figure></li><li><p>其中使用<code>&lt;!--more--&gt;</code>,来做节选，启用<code>阅读全文</code>的功能</p></li><li>通过<code>&lt;center&gt;居中内容&lt;center&gt;</code></li><li>通过图下展示<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% centerquote %&#125;居中引用&#123;% endcenterquote %&#125;</span><br></pre></td></tr></table></figure></li></ul><p><img src="http://pctoj8cop.bkt.clouddn.com/centerquote.jpg" alt="image"></p><h1 id="Hexo博客-NexT主题美化"><a href="#Hexo博客-NexT主题美化" class="headerlink" title="Hexo博客 NexT主题美化"></a>Hexo博客 NexT主题美化</h1><ol><li>未完待续。。。</li></ol>]]></content>
-      
+<search>
+  <entry>
+    <title><![CDATA[Hexo博客搭建记录]]></title>
+    <url>%2F2018%2F08%2F02%2FHexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AE%B0%E5%BD%95%2F</url>
+    <content type="text"><![CDATA[博客，也就自己看的赏心悦目 现在人人都可以动手自己搭建一个博客的时代,Hexo+github page的方式极大的方便了过把博客瘾的快感，这个教程更多的是记录自己博客的搭建方式和设置，纯粹是自己的一个记录，以便下次提起裤子就可以跑！ 准备工作 注册Github，并建立一个库为：username.github.io [username]为你gtihub的名字 下载安装git 下载安装node.js 有个域名（非必需）Hexo + Github page博客的搭建本地的搭建 新建文件夹，例如Blog(下面都以此为例)，进入Blog右击运行Git Bash Here 输入命令npm install -g hexo 再运行 hexo init下载模板 运行npm install 最后启动本地服务器 hexo g和hexo s(本地打开localhost:4000即可看见博客的成功搭建了)与Github page关联 打开Blog根目录下的_config.yml配置文件，找到deploy修改成如下; 1234deploy: type: git repository: https://github.com/username/username.github.io.git branch: master 运行：npm install hexo-deployer-git –save 运行：hexo g（本地生成静态文件） 运行：hexo d（将本地静态文件推送至Github）此时访问：username.github.io 即为你的博客地址了。绑定域名 在https://github.com/username/username.github.io仓库下新建一个文件CNAME,并填入域名，如 examle.com 到域名提供商处设置域名解析，添加以下纪录 123@ A 185.199.108.153@ A 185.199.109.153 www CNAME username.github.io. 最后等待一段时间，即可享受自己的域名博客了 更新博客内容 直接在git中hexo new &quot;XX&quot;,即可打开Blog\source\_posts目录下建立的xx.md文件，进行码字了 完成后执行hexo g和hexo s在本地预览 本地检查无问题后即可执行hexo d同步到自己的博客上了写作小技巧文章的创建 若是有vscode写markdown的话，可以做个创建文件后，直接在vscode中打开的脚本(直接参考LEAFERx的博客) 在 博客根目录/scripts/ 下新建 AutoOpenEditor.js 文件（取其他名字也可以，不影响）（如果没有 scripts 目录则新建），并粘贴以下代码，保存。 12345let spawn = require('hexo-util/lib/spawn');hexo.on('new', (data) =&gt; &#123; spawn('code', [hexo.base_dir, data.path]);&#125;); 文章模板的修改 通过修改\Blog\scaffolds\post.md文件，编写固定类型（参考） 1234567title 文章的标题date 创建日期 （文件的创建日期 ）updated 修改日期 （ 文件的修改日期）comments 是否开启评论 truetags 标签categories 分类permalink url中的名字（文件名） 其中使用&lt;!--more--&gt;,来做节选，启用阅读全文的功能 通过&lt;center&gt;居中内容&lt;center&gt; 通过图下展示1&#123;% centerquote %&#125;居中引用&#123;% endcenterquote %&#125; Hexo博客 NexT主题美化 未完待续。。。]]></content>
       <categories>
-          
-          <category> 教程 </category>
-          
+        <category>教程</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> Hexo </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>简洁常用的软件</title>
-      <link href="/2018/08/02/%E7%AE%80%E6%B4%81%E5%B8%B8%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/"/>
-      <url>/2018/08/02/%E7%AE%80%E6%B4%81%E5%B8%B8%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6/</url>
-      <content type="html"><![CDATA[<blockquote class="blockquote-center"><p>主要是对自己电脑软件的汇总，包含了一些平常常用的软件，并不是极客，是平民等级的</p></blockquote><p><img src="https://accelerator-origin.kkomando.com/wp-content/uploads/2016/03/windows-10-hold.jpg" alt="image"><br><a id="more"></a></p><h1 id="win软件："><a href="#win软件：" class="headerlink" title="win软件："></a>win软件：</h1><hr><ol><li><a href="https://www.listary.com/" target="_blank" rel="noopener">Listray</a>–本地搜索软件</li><li><a href="https://www.bandisoft.com/bandizip/" target="_blank" rel="noopener">Bandizip</a>–压缩文件</li><li><a href="https://code.visualstudio.com/" target="_blank" rel="noopener">Visual studio code</a>–巨硬自家的编辑器</li><li><a href="https://zh.snipaste.com/" target="_blank" rel="noopener">Snipaste</a>–截图软件</li><li><a href="https://music.163.com/" target="_blank" rel="noopener">网易云</a>–音乐软件</li><li>Office 四大套件–办公软件，he巨硬家招牌软件</li><li><a href="https://www.jianguoyun.com/" target="_blank" rel="noopener">坚果云</a>–同步文件</li><li><a href="https://telegram.org/" target="_blank" rel="noopener">Telegram</a>–通讯软件</li><li><a href="https://www.centbrowser.com/" target="_blank" rel="noopener">Cent browser</a>–老毛子的chromium浏览器</li><li><a href="https://www.teamviewer.com/zhcn/" target="_blank" rel="noopener">TeamViewer</a>–远程控制,公司家里不用两端跑</li><li><a href="http://www.nextechat.com/" target="_blank" rel="noopener">Yomail</a>–桌面邮箱,可能是国内最好用的客户端之一了</li><li><a href="http://www.nextechat.com/" target="_blank" rel="noopener">爱奇艺uwp</a>–视频软件,「良心」在线视频</li><li><a href="">Microsoft To-do</a>–效率软件，巨硬收购wunderlist出的</li><li><a href="">zPlayer uwp</a>–视频播放器</li><li><a href="http://xc.160.com/" target="_blank" rel="noopener">相册飞船</a>–相册本地备份，无脑往电脑塞完再整理</li><li><a href="https://www.microsoft.com/zh-cn/p/%E5%BE%AE%E4%BF%A1-for-windows/9nblggh4slx7" target="_blank" rel="noopener">微信 商店版</a>–通讯软件</li><li><a href="https://www.xmind.cn/" target="_blank" rel="noopener">Xmind 8</a>–思维导图</li><li>[百度网盘]–网盘工具</li><li>[TIM]–通讯工具</li><li>[Adobe Acrobat DC]–PDF阅读器</li><li>[shadownsocksR]–翻墙软件</li><li><a href="https://www.freedownloadmanager.org/zh/" target="_blank" rel="noopener">Free Download Manager</a>–下载工具</li><li><a href="https://calibre-ebook.com/" target="_blank" rel="noopener">Caliber</a>–本地电子书管理软件</li><li>持续未完。。。</li></ol><h1 id="Android软件应用"><a href="#Android软件应用" class="headerlink" title="Android软件应用"></a>Android软件应用</h1><hr><p>待更新…</p><h1 id="iOS软件应用"><a href="#iOS软件应用" class="headerlink" title="iOS软件应用"></a>iOS软件应用</h1><hr><p> 待更新…</p>]]></content>
-      
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[简洁常用的软件]]></title>
+    <url>%2F2018%2F08%2F02%2F%E7%AE%80%E6%B4%81%E5%B8%B8%E7%94%A8%E7%9A%84%E8%BD%AF%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[主要是对自己电脑软件的汇总，包含了一些平常常用的软件，并不是极客，是平民等级的 win软件： Listray–本地搜索软件 Bandizip–压缩文件 Visual studio code–巨硬自家的编辑器 Snipaste–截图软件 网易云–音乐软件 Office 四大套件–办公软件，he巨硬家招牌软件 坚果云–同步文件 Telegram–通讯软件 Cent browser–老毛子的chromium浏览器 TeamViewer–远程控制,公司家里不用两端跑 Yomail–桌面邮箱,可能是国内最好用的客户端之一了 爱奇艺uwp–视频软件,「良心」在线视频 Microsoft To-do–效率软件，巨硬收购wunderlist出的 zPlayer uwp–视频播放器 相册飞船–相册本地备份，无脑往电脑塞完再整理 微信 商店版–通讯软件 Xmind 8–思维导图 [百度网盘]–网盘工具 [TIM]–通讯工具 [Adobe Acrobat DC]–PDF阅读器 [shadownsocksR]–翻墙软件 Free Download Manager–下载工具 Caliber–本地电子书管理软件 持续未完。。。 Android软件应用 待更新… iOS软件应用 待更新…]]></content>
       <categories>
-          
-          <category> 技术 </category>
-          
+        <category>技术</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 工具 </tag>
-            
-            <tag> 软件 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
-      <title>开篇</title>
-      <link href="/2018/08/01/%E5%BC%80%E7%AF%87/"/>
-      <url>/2018/08/01/%E5%BC%80%E7%AF%87/</url>
-      <content type="html"><![CDATA[<p><img src="http://pctoj8cop.bkt.clouddn.com/fly1.jpg" alt="image"><br><a id="more"></a></p><blockquote class="blockquote-center"><p>Life is short. You need Python</p></blockquote><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">The Zen of Python, by Tim Peters</span><br><span class="line"></span><br><span class="line">Beautiful <span class="keyword">is</span> better than ugly.</span><br><span class="line">Explicit <span class="keyword">is</span> better than implicit.</span><br><span class="line">Simple <span class="keyword">is</span> better than complex.</span><br><span class="line">Complex <span class="keyword">is</span> better than complicated.</span><br><span class="line">Flat <span class="keyword">is</span> better than nested.</span><br><span class="line">Sparse <span class="keyword">is</span> better than dense.</span><br><span class="line">Readability counts.</span><br><span class="line">Special cases aren<span class="string">'t special enough to break the rules.</span></span><br><span class="line"><span class="string">Although practicality beats purity.</span></span><br><span class="line"><span class="string">Errors should never pass silently.</span></span><br><span class="line"><span class="string">Unless explicitly silenced.</span></span><br><span class="line"><span class="string">In the face of ambiguity, refuse the temptation to guess.</span></span><br><span class="line"><span class="string">There should be one-- and preferably only one --obvious way to do it.</span></span><br><span class="line"><span class="string">Although that way may not be obvious at first unless you'</span>re Dutch.</span><br><span class="line">Now <span class="keyword">is</span> better than never.</span><br><span class="line">Although never <span class="keyword">is</span> often better than *right* now.</span><br><span class="line">If the implementation <span class="keyword">is</span> hard to explain, it<span class="string">'s a bad idea.</span></span><br><span class="line"><span class="string">If the implementation is easy to explain, it may be a good idea.</span></span><br><span class="line"><span class="string">Namespaces are one honking great idea -- let'</span>s do more of those!</span><br></pre></td></tr></table></figure><p>以上的在python解释器中输入<code>import this</code>显示的一段文字，被称为python之禅的一段话！<br>其中</p><blockquote><p>Now is better than never.<br>Although never is often better than <em>right</em> now. </p></blockquote><p>被解释为：做比不做好，但不动脑去做还不如不做<br>也正是因为如此python编程语言被称为是很有哲学的语言，最近我也开始正式去接触学习这门，富有哲学的语言，又被称为万金油、胶水语言的「简单」编程语言。<br>这个博客的开通历经一个星期，从不断的选主题，到后来出现无法部署而不断删除重建，最后选择了现在使用比较广泛的一个hexo主题–NexT。<br>这个博客主要是记录学习python的过程，同时也会把自己的读书、生活、想法在上面展露，记下自己的路程。这个博客更多的是对自己写作的监督和建站的自娱过程，希望能一直坚持下去。</p>]]></content>
-      
+      <tags>
+        <tag>工具</tag>
+        <tag>软件</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[开篇]]></title>
+    <url>%2F2018%2F08%2F01%2F%E5%BC%80%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[Life is short. You need Python 123456789101112131415161718192021The Zen of Python, by Tim PetersBeautiful is better than ugly.Explicit is better than implicit.Simple is better than complex.Complex is better than complicated.Flat is better than nested.Sparse is better than dense.Readability counts.Special cases aren't special enough to break the rules.Although practicality beats purity.Errors should never pass silently.Unless explicitly silenced.In the face of ambiguity, refuse the temptation to guess.There should be one-- and preferably only one --obvious way to do it.Although that way may not be obvious at first unless you're Dutch.Now is better than never.Although never is often better than *right* now.If the implementation is hard to explain, it's a bad idea.If the implementation is easy to explain, it may be a good idea.Namespaces are one honking great idea -- let's do more of those! 以上的在python解释器中输入import this显示的一段文字，被称为python之禅的一段话！其中 Now is better than never.Although never is often better than right now. 被解释为：做比不做好，但不动脑去做还不如不做也正是因为如此python编程语言被称为是很有哲学的语言，最近我也开始正式去接触学习这门，富有哲学的语言，又被称为万金油、胶水语言的「简单」编程语言。这个博客的开通历经一个星期，从不断的选主题，到后来出现无法部署而不断删除重建，最后选择了现在使用比较广泛的一个hexo主题–NexT。这个博客主要是记录学习python的过程，同时也会把自己的读书、生活、想法在上面展露，记下自己的路程。这个博客更多的是对自己写作的监督和建站的自娱过程，希望能一直坚持下去。]]></content>
       <categories>
-          
-          <category> 随笔 </category>
-          
+        <category>随笔</category>
       </categories>
-      
-      
-        <tags>
-            
-            <tag> 随笔 </tag>
-            
-        </tags>
-      
-    </entry>
-    
-  
-  
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
 </search>
