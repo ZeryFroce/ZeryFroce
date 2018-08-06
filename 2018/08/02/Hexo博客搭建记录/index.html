@@ -112,7 +112,7 @@
 <meta property="og:description" content="博客，也就自己看的赏心悦目  现在人人都可以动手自己搭建一个博客的时代,Hexo+github page的方式极大的方便了过把博客瘾的快感，这个教程更多的是记录自己博客的搭建方式和设置，纯粹是自己的一个记录，以便下次提起裤子就可以跑！">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://pctoj8cop.bkt.clouddn.com/centerquote.jpg">
-<meta property="og:updated_time" content="2018-08-03T02:35:53.246Z">
+<meta property="og:updated_time" content="2018-08-04T01:48:46.243Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo博客搭建记录">
 <meta name="twitter:description" content="博客，也就自己看的赏心悦目  现在人人都可以动手自己搭建一个博客的时代,Hexo+github page的方式极大的方便了过把博客瘾的快感，这个教程更多的是记录自己博客的搭建方式和设置，纯粹是自己的一个记录，以便下次提起裤子就可以跑！">
@@ -220,7 +220,7 @@
       
         
         <li class="menu-item menu-item-life">
-          <a href="/categories/life" rel="section">
+          <a href="/life" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-book"></i> <br />
             
@@ -230,7 +230,7 @@
       
         
         <li class="menu-item menu-item-technology">
-          <a href="/categries/technology" rel="section">
+          <a href="/technology/" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-code"></i> <br />
             
@@ -385,8 +385,8 @@
               </span>
               <span class="post-updated">
 	            更新于
-	            <time itemprop="dateUpdated" datetime="2018-08-03T10:35:53+08:00" content="2018-08-03">
-	            2018-08-03
+	            <time itemprop="dateUpdated" datetime="2018-08-04T09:48:46+08:00" content="2018-08-04">
+	            2018-08-04
             	</time>
                </span>
             
@@ -465,7 +465,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  727
+                  950
                 </span>
               
 
@@ -542,13 +542,26 @@
 <li><p>其中使用<code>&lt;!--more--&gt;</code>,来做节选，启用<code>阅读全文</code>的功能</p>
 </li>
 <li>通过<code>&lt;center&gt;居中内容&lt;center&gt;</code></li>
-<li>通过图下展示<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% centerquote %&#125;居中引用&#123;% endcenterquote %&#125;</span><br></pre></td></tr></table></figure>
+<li><p>通过图下展示<img src="http://pctoj8cop.bkt.clouddn.com/centerquote.jpg" alt="image"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% centerquote %&#125;居中引用&#123;% endcenterquote %&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在文章内插入音乐播放器做背景音乐，参考<a href="https://clearsky.me/hexo-aplayer.html" target="_blank" rel="noopener">晴空小筑博客</a></p>
+<ul>
+<li><p>加载js文件 <code>/themes/next/layout/_partials/</code> 目录下的 <code>header.swig</code>，引入 Aplayer.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">"stylesheet"</span> href=<span class="string">"https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css"</span>&gt;</span><br><span class="line">&lt;script src=<span class="string">"https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>/themes/next/layout/_partials/</code> 目录下的 <code>footer.swig</code>，引入 Aplayer.js</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在编写文章，插入以下代码</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"aplayer"</span> <span class="attr">data-id</span>=<span class="string">"22773511"</span> <span class="attr">data-server</span>=<span class="string">"netease"</span> <span class="attr">data-type</span>=<span class="string">"song"</span> <span class="attr">data-mode</span>=<span class="string">"single"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p><img src="http://pctoj8cop.bkt.clouddn.com/centerquote.jpg" alt="image"></p>
-<h1 id="Hexo博客-NexT主题美化"><a href="#Hexo博客-NexT主题美化" class="headerlink" title="Hexo博客 NexT主题美化"></a>Hexo博客 NexT主题美化</h1><ol>
-<li>未完待续。。。</li>
-</ol>
+<p>参  数 | 值 |<br>— | —|<br>data-id |歌曲/专辑/歌单 ID |<br>date-server | netease/tencent/xiami/kugou |<br>data-type | song （单曲） album （专辑） playlist （歌单） search （搜索） |<br>date-mode | random （随机） single （单曲） circulation （列表循环） order （列表） |<br>date-autoplay | false（手动播放） true（自动播放）|</p>
+</li>
+</ul>
+<h1 id="Hexo博客-NexT主题美化"><a href="#Hexo博客-NexT主题美化" class="headerlink" title="Hexo博客 NexT主题美化"></a>Hexo博客 NexT主题美化</h1><p>## </p>
+<h2 id="显示建站日期和屏蔽Hexo驱动"><a href="#显示建站日期和屏蔽Hexo驱动" class="headerlink" title="显示建站日期和屏蔽Hexo驱动"></a>显示建站日期和屏蔽Hexo驱动</h2><h2 id="添加评论"><a href="#添加评论" class="headerlink" title="添加评论"></a>添加评论</h2><h2 id="添加更新日期"><a href="#添加更新日期" class="headerlink" title="添加更新日期"></a>添加更新日期</h2><h2 id="创建图床"><a href="#创建图床" class="headerlink" title="创建图床"></a>创建图床</h2><h2 id="开启搜索"><a href="#开启搜索" class="headerlink" title="开启搜索"></a>开启搜索</h2><p>## </p>
 
       
     </div>
@@ -588,6 +601,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/06/HK匆匆忙忙/" rel="prev" title="HK匆匆忙忙">
+                HK匆匆忙忙 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -671,7 +688,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -682,7 +699,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -693,7 +710,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -754,7 +771,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-Github-page博客的搭建"><span class="nav-number">2.</span> <span class="nav-text">Hexo + Github page博客的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#本地的搭建"><span class="nav-number">2.1.</span> <span class="nav-text">本地的搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与Github-page关联"><span class="nav-number">2.2.</span> <span class="nav-text">与Github page关联</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绑定域名"><span class="nav-number">3.</span> <span class="nav-text">绑定域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更新博客内容"><span class="nav-number">4.</span> <span class="nav-text">更新博客内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写作小技巧"><span class="nav-number">5.</span> <span class="nav-text">写作小技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章的创建"><span class="nav-number">5.1.</span> <span class="nav-text">文章的创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章模板的修改"><span class="nav-number">5.2.</span> <span class="nav-text">文章模板的修改</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客-NexT主题美化"><span class="nav-number">6.</span> <span class="nav-text">Hexo博客 NexT主题美化</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#准备工作"><span class="nav-number">1.</span> <span class="nav-text">准备工作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo-Github-page博客的搭建"><span class="nav-number">2.</span> <span class="nav-text">Hexo + Github page博客的搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#本地的搭建"><span class="nav-number">2.1.</span> <span class="nav-text">本地的搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#与Github-page关联"><span class="nav-number">2.2.</span> <span class="nav-text">与Github page关联</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#绑定域名"><span class="nav-number">3.</span> <span class="nav-text">绑定域名</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更新博客内容"><span class="nav-number">4.</span> <span class="nav-text">更新博客内容</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#写作小技巧"><span class="nav-number">5.</span> <span class="nav-text">写作小技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章的创建"><span class="nav-number">5.1.</span> <span class="nav-text">文章的创建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文章模板的修改"><span class="nav-number">5.2.</span> <span class="nav-text">文章模板的修改</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Hexo博客-NexT主题美化"><span class="nav-number">6.</span> <span class="nav-text">Hexo博客 NexT主题美化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#显示建站日期和屏蔽Hexo驱动"><span class="nav-number">6.1.</span> <span class="nav-text">显示建站日期和屏蔽Hexo驱动</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加评论"><span class="nav-number">6.2.</span> <span class="nav-text">添加评论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加更新日期"><span class="nav-number">6.3.</span> <span class="nav-text">添加更新日期</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建图床"><span class="nav-number">6.4.</span> <span class="nav-text">创建图床</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启搜索"><span class="nav-number">6.5.</span> <span class="nav-text">开启搜索</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -788,7 +805,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">1.5k</span>
+    <span title="Site words total count">2.1k</span>
   
 </div>
 
